@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+  
+    <section>
+        <form action="/createTask" method="POST" id="createTask">
+        <div class="container" >
+
+          <div class="row justify-content-center">
+
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+              <div class="row">
+                <div class="col text-center">
+                  <h1>Create Task</h1>
+                </div>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col mt-4">
+                    <label for="exampleFormControlTextarea1">Label:</label>
+                  <input type="text" name="task" class="form-control" placeholder="Task Name" required>
+                </div>
+              </div>
+              
+              <div class="row align-items-center mt-4">
+                    <label for="exampleFormControlTextarea1">Task Description:</label>
+                    <textarea class="form-control" form="createTask" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              
+              <div class="row justify-content-start mt-4">
+                <div class="col">
+                    <input type="hidden" name="uuid" value='<%= data[0].uuid %>'>
+                  <button type="submit" class="btn btn-primary mt-4">Create Task</button>
+                </div>
+                <a href='/home'>Go Back</a>
+              </div>
+            </div>
+        </div>
+    </form>
+      </section>
+
+
+      
+  </body>
+  
+</html>
